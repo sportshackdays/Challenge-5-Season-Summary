@@ -1,6 +1,4 @@
 # Challenge-5-Season-Summary
-
-# add a reference to the image so it displays in the README
 ![alt text](./swisski.png)
 
 #### SPORTIFY Yearly Training summary
