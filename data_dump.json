@@ -1,5 +1,24 @@
 {
     "TimeInZones": "Total training time in Zone_1 in hours: 563.5305555555556\nTotal training time in Zone_2 in hours: 195.6913888888889\nTotal training time in Zone_3 in hours: 62.675\nTotal training time in Zone_4 in hours: 39.95111111111111\nTotal training time in Zone_5 in hours: 13.2775\n",
     "TotalTrainingTime": 912.5,
-    "var3": "I1"
+    "MostCommonSportsType": "I1",
+    "TrainingTimeperMonth": {
+        "2023-05": "81h 0m",
+        "2023-06": "101h 25m",
+        "2023-07": "115h 35m",
+        "2023-08": "103h 0m",
+        "2023-09": "78h 30m",
+        "2023-10": "94h 0m",
+        "2023-11": "77h 35m",
+        "2023-12": "65h 55m",
+        "2024-01": "66h 35m",
+        "2024-02": "58h 40m",
+        "2024-03": "42h 55m",
+        "2024-04": "27h 20m"
+    },
+    "longest_workout_info": {
+        "date": "2023-05-28 00:00:00",
+        "method": "Dauermethode",
+        "duration": "04:45:00"
+    }
 }
