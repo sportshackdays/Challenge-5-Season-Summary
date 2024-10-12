@@ -1,5 +1,11 @@
 {
-    "TimeInZones": "Total training time in Zone_1 in hours: 563.5305555555556\nTotal training time in Zone_2 in hours: 195.6913888888889\nTotal training time in Zone_3 in hours: 62.675\nTotal training time in Zone_4 in hours: 39.95111111111111\nTotal training time in Zone_5 in hours: 13.2775\n",
+    "TimeInZones": {
+        "zone_1_time": 563.5305555555556,
+        "zone_2_time": 195.6913888888889,
+        "zone_3_time": 62.675,
+        "zone_4_time": 39.95111111111111,
+        "zone_5_time": 13.2775
+    },
     "TotalTrainingTime": 912.5,
     "MostCommonSportsType": "I1",
     "TrainingTimeperMonth": {
@@ -19,6 +25,7 @@
     "longest_workout_info": {
         "date": "2023-05-28",
         "method": "Dauermethode",
-        "duration": "4h 45m"
+        "duration": "4h 45m",
+        "name": "Velo"
     }
 }
