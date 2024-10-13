@@ -6,26 +6,26 @@
         "zone_4_time": 39.95111111111111,
         "zone_5_time": 13.2775
     },
-    "TotalTrainingTime": 912.5,
-    "MostCommonSportsType": "I1",
+    "TotalTrainingTime": 571.0,
+    "MostCommonSportsType": "Riesenslalom",
     "TrainingTimeperMonth": {
-        "2023-05": "81h 0m",
-        "2023-06": "101h 25m",
-        "2023-07": "115h 35m",
-        "2023-08": "103h 0m",
-        "2023-09": "78h 30m",
-        "2023-10": "94h 0m",
-        "2023-11": "77h 35m",
-        "2023-12": "65h 55m",
-        "2024-01": "66h 35m",
-        "2024-02": "58h 40m",
-        "2024-03": "42h 55m",
-        "2024-04": "27h 20m"
+        "2023-05": "15h 30m",
+        "2023-06": "90h 45m",
+        "2023-07": "60h 30m",
+        "2023-08": "80h 30m",
+        "2023-09": "66h 5m",
+        "2023-10": "46h 15m",
+        "2023-11": "37h 55m",
+        "2023-12": "49h 0m",
+        "2024-01": "42h 45m",
+        "2024-02": "36h 0m",
+        "2024-03": "8h 45m",
+        "2024-04": "15h 0m"
     },
     "longest_workout_info": {
-        "date": "2023-05-28",
-        "method": "Dauermethode",
-        "duration": "4h 45m",
-        "name": "Velo"
+        "date": "2023-10-03",
+        "method": "Technik/Koordination",
+        "duration": "8.0h",
+        "name": "Start training obersaxen"
     }
 }
