@@ -33,9 +33,9 @@ function setup() {
   noStroke();
   frameRate(60);
 	info = [
-		[ '\nduration', myData.TotalTrainingTime ],
-		[ 'time in\nzone 5', round(myData.TimeInZones.zone_5_time, 2) ],
-		[ 'longest\nworkout', myData.longest_workout_info.duration ]
+		[ '\nduration', myData.TotalTrainingTime, 60 ],
+		[ 'time in\nzone 5', round(myData.TimeInZones.zone_5_time, 2), 65 ],
+		[ 'longest\nworkout', myData.longest_workout_info.duration, 74 ]
 	]
 }
 
@@ -46,7 +46,17 @@ rect_margin = 10;
 
 function draw() {
   timer++;
-	if (timer > 1000) { return }
+	if (timer < 500) { scene1(); }
+	if (timer > 500) { scene2(); }  
+
+	fill(120);
+	//circle(mouseX, mouseY, 20);
+  textAlign(RIGHT);
+  textFont(myFont, 20);
+	text('F: ' + timer + ' | M: ' + int(mouseX) + ',' + int(mouseY), WINDOW_WIDTH-10, WINDOW_HEIGHT-10);
+}
+
+function scene1() {
 	background(100);
 	image(arrayBG[0], 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
   fill(50);
@@ -63,8 +73,9 @@ function draw() {
 	c.setAlpha(150);
 	for (i = 0; i < 3; i++) {
 		xx = 3 * timer / (i + 1);
-		xx = min(min(xx, 200 + (1 + i) * 60), WINDOW_WIDTH);
+		xx = min(xx, WINDOW_WIDTH * info[i][2] / 100);
 		yy = 200 + rect_margin + (i * rect_height);
+
 		fill(c);
   	rect(0, yy, WINDOW_WIDTH, slider_h);
 		image(mySlider, xx - slider_w, yy, slider_w, slider_h);
@@ -78,10 +89,10 @@ function draw() {
 	  textFont(myFontBold, 76);
 		text(info[i][1], xx - 50, yy + rect_height / 1.6);
 	}
-	
-  fill(120);
-	//circle(mouseX, mouseY, 20);
-  textAlign(RIGHT);
-  textFont(myFont, 20);
-	text('F: ' + timer + ' | M: ' + int(mouseX) + ',' + int(mouseY), WINDOW_WIDTH-10, WINDOW_HEIGHT-10);
+}
+
+function scene2() {
+	background(100);
+	image(arrayBG[1], 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+  fill(50);
 }
