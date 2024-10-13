@@ -27,5 +27,28 @@
         "method": "Technik/Koordination",
         "duration": "8.0h",
         "name": "Start training obersaxen"
-    }
+    },
+    "day_in_the_life_of": [
+        {
+            "start_time": "08:00",
+            "end_time": "09:30",
+            "type": "Super G",
+            "method": "Techniktraining",
+            "total_duration": "01:30"
+        },
+        {
+            "start_time": "15:30",
+            "end_time": "16:15",
+            "type": "Kraft Rumpf",
+            "method": "Lokale Stabilisation/Spannungskontrolle",
+            "total_duration": "00:45"
+        },
+        {
+            "start_time": "09:30",
+            "end_time": "11:00",
+            "type": "Riesenslalom",
+            "method": "Techniktraining",
+            "total_duration": "01:30"
+        }
+    ]
 }
