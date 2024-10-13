@@ -4,16 +4,24 @@ WINDOW_HEIGHT = 1920 * SCALING_FACTOR;
 CENTER_X = WINDOW_WIDTH / 2;
 CENTER_Y = WINDOW_HEIGHT / 2;
 
-let myData, myFont, myFontBold, myLogo, arrayBG;
-let logo_w = 750 / 4;
-let logo_h = 190 / 4;
+let myData, myFont, myFontBold, arrayBG;
+let myLogo, myFooter, mySlider;
+let logo_w = 346 / 2; //750 / 4;
+let logo_h = 116 / 2; //190 / 4;
+let footer_w = 375;
+let footer_h = 219;
+let slider_w = 554;
+let slider_h = 75;
 
 function preload() {
 	myData = loadJSON('data_dump.json');
   myFont = loadFont('font/PTSans-Regular.ttf');
   myFontBold = loadFont('font/PTSans-Bold.ttf');
-	myLogo = loadImage('img/swissski.png');
+	myLogo = loadImage('img/swissski2.png');
+	myFooter = loadImage('img/corner-bottom.png');
+	mySlider = loadImage('img/corner-wide.png');
 	arrayBG = [
+		loadImage('img/mountain.jpg'),
 		loadImage('img/vlcsnap-2024-10-12-18h24m42s736.jpg')
 	]
 }
@@ -25,48 +33,55 @@ function setup() {
   noStroke();
   frameRate(60);
 	info = [
-		myData.TotalTrainingTime,
-		myData.MostCommonSportsType,
-		myData.longest_workout_info.duration
+		[ '\nduration', myData.TotalTrainingTime ],
+		[ 'time in\nzone 5', round(myData.TimeInZones.zone_5_time, 2) ],
+		[ 'longest\nworkout', myData.longest_workout_info.duration ]
 	]
 }
 
 timer = 0;
 
-rect_height = 50;
-rect_margin = 5;
+rect_height = 100;
+rect_margin = 10;
 
 function draw() {
   timer++;
-	if (timer > 1200) { return }
+	if (timer > 1000) { return }
 	background(100);
 	image(arrayBG[0], 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
   fill(50);
-  rect(0, WINDOW_HEIGHT-logo_h-20, WINDOW_WIDTH, logo_h+20);
-	
-	c = color(255);
-	c.setAlpha(150);
-  textFont(myFontBold, 30);
-	for (i = 0; i < 3; i++) {
-		xx = 3.2 * timer / (i + 1);
-		xx = min(xx, (1 + i) * 100);
-		yy = rect_margin + (i * rect_height);
-		fill(c);
-  	rect(0, yy, xx, rect_height - rect_margin);
-		fill(255);
-		text(info[i], xx + 5, yy + rect_height / 1.8);
-	}
+
+	image(myLogo, 0, 0, logo_w, logo_h);
+	image(myFooter, WINDOW_WIDTH-footer_w, WINDOW_HEIGHT-footer_h, footer_w, footer_h);
 	
   fill(255);
 	textAlign(CENTER);
-  textFont(myFontBold, 70);
-	text('SEASON\nFLASH', CENTER_X, CENTER_Y + min(100, timer));
+  textFont(myFont, 60);
+	text('TRAINING', CENTER_X, 180 - min(30, timer));
+
+	c = color(0);
+	c.setAlpha(150);
+	for (i = 0; i < 3; i++) {
+		xx = 3 * timer / (i + 1);
+		xx = min(min(xx, 200 + (1 + i) * 60), WINDOW_WIDTH);
+		yy = 200 + rect_margin + (i * rect_height);
+		fill(c);
+  	rect(0, yy, WINDOW_WIDTH, slider_h);
+		image(mySlider, xx - slider_w, yy, slider_w, slider_h);
+		fill(255);
+
+		textAlign(LEFT);
+	  textFont(myFont, 24);
+		text(info[i][0], xx + 10, yy + rect_height / 3);
+
+		textAlign(RIGHT);
+	  textFont(myFontBold, 76);
+		text(info[i][1], xx - 50, yy + rect_height / 1.6);
+	}
 	
-	image(myLogo, WINDOW_WIDTH-logo_w-10, WINDOW_HEIGHT-logo_h-10, logo_w, logo_h);
-	
-  fill(150);
-	circle(mouseX, mouseY, 20);
-  textAlign(LEFT);
+  fill(120);
+	//circle(mouseX, mouseY, 20);
+  textAlign(RIGHT);
   textFont(myFont, 20);
-	text('F: ' + timer + ' | M: ' + int(mouseX) + ',' + int(mouseY), 20, WINDOW_HEIGHT-20);
+	text('F: ' + timer + ' | M: ' + int(mouseX) + ',' + int(mouseY), WINDOW_WIDTH-10, WINDOW_HEIGHT-10);
 }
