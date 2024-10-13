@@ -1,0 +1,73 @@
+{
+    "TimeInZones": {
+        "zone_1_time": 563.5305555555556,
+        "zone_2_time": 195.6913888888889,
+        "zone_3_time": 62.675,
+        "zone_4_time": 39.95111111111111,
+        "zone_5_time": 13.2775
+    },
+    "TotalTrainingTime": "571h",
+    "MostCommonSportsType": "Slalom",
+    "TrainingTimeperMonth": {
+        "2023-05": 15.5,
+        "2023-06": 90.8,
+        "2023-07": 60.5,
+        "2023-08": 80.5,
+        "2023-09": 66.1,
+        "2023-10": 46.2,
+        "2023-11": 59.9,
+        "2023-12": 49.0,
+        "2024-01": 42.8,
+        "2024-02": 36.0,
+        "2024-03": 8.8,
+        "2024-04": 15.0
+    },
+    "longest_workout_info": {
+        "date": "2023-10-03",
+        "method": "Technik/Koordination",
+        "duration": "8h",
+        "name": "Start training obersaxen"
+    },
+    "day_in_the_life_of": [
+        {
+            "start_time": "08:00",
+            "end_time": "09:30",
+            "type": "Super G",
+            "method": "Techniktraining",
+            "total_duration": "01:30"
+        },
+
+        {
+            "start_time": "12:00",
+            "end_time": "13:00",
+            "type": "Lunch",
+            "method": "Lunch",
+            "total_duration": "01:00"
+        },
+
+        {
+            "start_time": "13:30",
+            "end_time": "14:40",
+            "type": "Nap",
+            "method": "Nap",
+            "total_duration": "01:00"
+        },
+
+        
+        {
+            "start_time": "15:30",
+            "end_time": "16:15",
+            "type": "Kraft Rumpf",
+            "method": "Lokale Stabilisation/Spannungskontrolle",
+            "total_duration": "00:45"
+        },
+        {
+            "start_time": "09:30",
+            "end_time": "11:00",
+            "type": "Riesenslalom",
+            "method": "Techniktraining",
+            "total_duration": "01:30"
+        }
+    ],
+    "most_common_training": "Riesenslalom"
+}
