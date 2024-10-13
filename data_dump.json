@@ -6,7 +6,7 @@
         "zone_4_time": 39.95111111111111,
         "zone_5_time": 13.2775
     },
-    "TotalTrainingTime": 571.0,
+    "TotalTrainingTime": "571h",
     "MostCommonSportsType": "Riesenslalom",
     "TrainingTimeperMonth": {
         "2023-05": 15.5,
@@ -36,6 +36,24 @@
             "method": "Techniktraining",
             "total_duration": "01:30"
         },
+
+        {
+            "start_time": "12:00",
+            "end_time": "13:00",
+            "type": "Lunch",
+            "method": "Lunch",
+            "total_duration": "01:00"
+        },
+
+        {
+            "start_time": "13:30",
+            "end_time": "14:40",
+            "type": "Nap",
+            "method": "Nap",
+            "total_duration": "01:00"
+        },
+
+        
         {
             "start_time": "15:30",
             "end_time": "16:15",
