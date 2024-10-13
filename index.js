@@ -49,19 +49,34 @@ rect_margin = 10;
 
 function draw() {
 
-	//return scene3();
+	//return scene3 ();
 
   timer++;
 	if (timer < 500) { scene1(); }
 	else if (timer < 1000) { scene2(); }  
-	else if (timer < 200000) { scene3(); }  
+	else if (timer < 1400) { scene3(); }  
+	else if (timer < 1900) { scene4(); }  
+	else { 
+		timer = t2 = t3 = t4 = 0;
+	}  
 
 	return;
+
+	// For debugging:
 	fill(120);
-	//circle(mouseX, mouseY, 20);
+	circle(mouseX, mouseY, 20);
   textAlign(RIGHT);
   textFont(myFont, 20);
 	text('T: ' + timer + ' | M: ' + int(mouseX) + ',' + int(mouseY), WINDOW_WIDTH-10, WINDOW_HEIGHT-10);
+}
+
+function footerText(message) {
+	rotate(-0.59);
+	textAlign(LEFT);
+  textFont(myFontBold, 45);
+  fill(0);
+	text('\n       ' + message, -350, WINDOW_HEIGHT * 0.9);
+	rotate(0);
 }
 
 function scene1() {
@@ -95,6 +110,8 @@ function scene1() {
 	  textFont(myFontBold, 76);
 		text(info[i][1], xx - 50, yy + rect_height / 1.6);
 	}
+
+	footerText('#seasonflash');
 }
 
 let t2 = 0;
@@ -140,17 +157,32 @@ function scene3() {
   fill('#E2001A');
 	textAlign(LEFT);
   textFont(myFont, 50);
-	text('JULY 6\n2024', 20, WINDOW_HEIGHT-150 + (t3/10));
+	text('JULY 6\n2024', 20, WINDOW_HEIGHT-160 + (t3/10));
 
 	image(myLogo, 0, 0, logo_w, logo_h);
 	image(myFooter, WINDOW_WIDTH-footer_w, WINDOW_HEIGHT-footer_h, footer_w, footer_h);
 
-/*
-  fill(0);
   rotate(-0.59);
 	textAlign(LEFT);
   textFont(myFontBold, 45);
-	text('You are on a roll!', -350, WINDOW_HEIGHT * 0.9);
+  fill(255);
+	text('\n        Day in the life', -350, WINDOW_HEIGHT * 0.9);
 	rotate(0);
-*/
+}
+
+let t4 = 0;
+function scene4() {
+	background(100);
+	image(arrayBG[3], -20, 1-min(500, ++t4)/4, WINDOW_WIDTH*1.2, WINDOW_HEIGHT*1.2);
+	image(myLogo, 0, 0, logo_w, logo_h);
+	image(myFooter, WINDOW_WIDTH-footer_w, WINDOW_HEIGHT-footer_h, footer_w, footer_h);
+
+  rotate(-0.59);
+	textAlign(LEFT);
+  textFont(myFontBold, 45);
+  fill(255);
+	text('  Share me\n', -350, WINDOW_HEIGHT * 0.9);
+  fill(0);
+	text('\n       #seasonflash', -350, WINDOW_HEIGHT * 0.9);
+	rotate(0);
 }
