@@ -4,16 +4,18 @@ WINDOW_HEIGHT = 1920 * SCALING_FACTOR;
 CENTER_X = WINDOW_WIDTH / 2;
 CENTER_Y = WINDOW_HEIGHT / 2;
 
-let myData, myFont, myFontBold, myLogo, myBG;
+let myData, myFont, myFontBold, myLogo, arrayBG;
 let logo_w = 750 / 4;
 let logo_h = 190 / 4;
 
 function preload() {
 	myData = loadJSON('data_dump.json');
-  myFont = loadFont('PTSans-Regular.ttf');
-  myFontBold = loadFont('PTSans-Bold.ttf');
-	myLogo = loadImage('swissski.png');
-	myBG = loadImage('vlcsnap-2024-10-12-18h24m42s736.jpg');
+  myFont = loadFont('font/PTSans-Regular.ttf');
+  myFontBold = loadFont('font/PTSans-Bold.ttf');
+	myLogo = loadImage('img/swissski.png');
+	arrayBG = [
+		loadImage('img/vlcsnap-2024-10-12-18h24m42s736.jpg')
+	]
 }
 
 function setup() {
@@ -38,7 +40,7 @@ function draw() {
   timer++;
 	if (timer > 1200) { return }
 	background(100);
-	image(myBG, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+	image(arrayBG[0], 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
   fill(50);
   rect(0, WINDOW_HEIGHT-logo_h-20, WINDOW_WIDTH, logo_h+20);
 	
@@ -55,7 +57,6 @@ function draw() {
 		text(info[i], xx + 5, yy + rect_height / 1.8);
 	}
 	
-	alpha(1.0);
   fill(255);
 	textAlign(CENTER);
   textFont(myFontBold, 70);
